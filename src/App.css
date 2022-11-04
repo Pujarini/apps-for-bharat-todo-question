@@ -2,3 +2,25 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.todo-input {
+  display: flex;
+  justify-content: center;
+}
+
+.todoList {
+  border: 1px solid;
+}
+
+.todoList__operations {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todoItem.completed {
+  text-decoration: line-through;
+}
+
+.deleteTodo-btn {
+}
