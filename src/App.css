@@ -1,25 +1,125 @@
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+.todo-container {
+  background-color: #a18aff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-box {
+  height: 500px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
 }
 
 .todo-input {
   display: flex;
   justify-content: center;
+  height: 50px;
+  width: 266px;
+  margin-bottom: 80px;
+}
+
+.todo-input input {
+  border: none;
+  margin-right: 10px;
+  outline: none;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.todo-input button {
+  border: 1px solid #fff;
+  /* outline: #a18aff; */
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.title {
+  color: #fff;
 }
 
 .todoList {
-  border: 1px solid;
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .todoList__operations {
   display: flex;
+  gap: 50px;
+}
+
+.todoList__operations button {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.todoItemsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;
+  height: 250px;
+  width: 100%;
+  border: 1px solid #fff;
+  overflow-y: scroll;
+  padding: 20px;
+}
+
+.todoItem {
+  /* border: 1px solid; */
+  padding: 10px;
+  cursor: pointer;
+}
+
+.todoItem button {
+  border: none;
+  margin: 2px;
+}
+
+.todoItem .delete-item {
+  background-color: red;
+  color: #fff;
+}
+
+.todoItem .edit-item {
+  background-color: greenyellow;
+  /* color: #fff; */
 }
 
 .todoItem.completed {
   text-decoration: line-through;
+}
+
+.todoList__status button {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+  background-color: transparent;
+  color: #fff;
 }
 
 .deleteTodo-btn {

@@ -36,24 +36,40 @@ const Todo = () => {
     setallTodos(clearCompleted);
   };
 
+  const deleteItem = (id) => {
+    const filteredTodos = allTodos.filter((task) => task.id !== id);
+    setallTodos(filteredTodos);
+  };
+
+  // const editItem = (id) => {
+  //   const filteredTodos = allTodos.find((task) => task.id === id);
+  //   const filteredAllTodos = allTodos.filter((task) => task.id !== id);
+  //   setTodo(filteredTodos.title);
+  //   setallTodos(filteredAllTodos);
+  // };
+
   return (
     <div className="todo-container">
-      <div className="todo-input">
-        <input
-          type="text"
-          placeholder="Enter the todo"
-          onChange={inputChange}
-          value={todo}
+      <div className="todo-box">
+        <div className="todo-input">
+          <input
+            type="text"
+            placeholder="Enter the todo"
+            onChange={inputChange}
+            value={todo}
+          />
+          <button type="submit" onClick={addTodo}>
+            Add
+          </button>
+        </div>
+        <TodoList
+          todos={allTodos}
+          completedTask={addCompletedStatus}
+          clearCompleted={clearCompletedTodo}
+          deleteItem={deleteItem}
+          // editItem={editItem}
         />
-        <button type="submit" onClick={addTodo}>
-          Add to do
-        </button>
       </div>
-      <TodoList
-        todos={allTodos}
-        completedTask={addCompletedStatus}
-        clearCompleted={clearCompletedTodo}
-      />
     </div>
   );
 };
